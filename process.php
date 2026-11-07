@@ -4,7 +4,7 @@ $host     = 'localhost';
 $port     = '5432';
 $db       = 'corporate_db';
 $user     = 'postgres';
-$password = 'postgres';
+$password = 'aritra2005';
 
 $dsn = "pgsql:host=$host;port=$port;dbname=$db;";
 
@@ -17,10 +17,10 @@ try {
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
-        $emp_name   = isset($_POST['emp_name']) && trim($_POST['emp_name']) !== '' ? trim($_POST['emp_name']) : null;
-        $emp_id     = isset($_POST['emp_id']) && trim($_POST['emp_id']) !== '' ? trim($_POST['emp_id']) : null;
-        $phone      = isset($_POST['phone']) && trim($_POST['phone']) !== '' ? trim($_POST['phone']) : null;
-        $department = isset($_POST['department']) && trim($_POST['department']) !== '' ? trim($_POST['department']) : null;
+        $emp_name   = $_POST['emp_name'];
+        $emp_id     = $_POST['emp_id'];
+        $phone      = $_POST['phone'];
+        $department = $_POST['department'];
 
         if (!$emp_name || !$phone) {
             throw new Exception("Full Name and Phone Number are required fields.");
